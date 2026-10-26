@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Noise Machine — Free White, Pink &amp; Brown Noise for Sleep and Focus | S3eidat Tools</title>
+<meta name="description" content="White, pink and brown noise, rain, fan and ocean sounds generated live in your browser. Mix them, set a sleep timer with fade-out, save your own presets. No audio files, no ads, nothing uploaded.">
+<meta property="og:title" content="Noise Machine — white, pink and brown noise">
+<meta property="og:description" content="Mix noise, rain, fan and ocean sounds with a sleep timer. Generated live in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="noise-machine">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Noise Machine</h1>
+    <p>White, pink and brown noise, rain, fan and ocean, generated live in your browser (no audio files). Mix them, set a sleep timer, save your favourite blend.</p>
+  </section>
+
+  <section class="card nm-top">
+    <button class="play-btn" id="play" aria-label="Play"><svg class="i"><use href="#i-play"/></svg></button>
+    <div class="stack grow">
+      <div class="row between">
+        <b id="nowPlaying">Pick a sound below, then press play</b>
+        <span class="chip" id="timerChip" hidden></span>
+      </div>
+      <label class="field range">Master volume <span class="val" id="masterV">70%</span>
+        <input type="range" id="master" min="0" max="100" value="70">
+      </label>
+      <div class="row">
+        <span class="faint">Sleep timer</span>
+        <div class="seg" id="timer" role="group" aria-label="Sleep timer">
+          <button aria-pressed="true" data-v="0">Off</button>
+          <button aria-pressed="false" data-v="15">15 m</button>
+          <button aria-pressed="false" data-v="30">30 m</button>
+          <button aria-pressed="false" data-v="60">1 h</button>
+          <button aria-pressed="false" data-v="90">1.5 h</button>
+          <button aria-pressed="false" data-v="480">8 h</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sounds mt" id="sounds"></div>
+
+  <section class="card mt stack">
+    <div class="row between"><h2>Presets</h2><span class="faint">Saved in this browser</span></div>
+    <div class="row presets" id="presets"></div>
+    <div class="row save-row">
+      <input class="input grow" id="presetName" maxlength="40" placeholder="Name this mix, e.g. Late night study" aria-label="Preset name" dir="auto">
+      <button class="btn" id="savePreset"><svg class="i"><use href="#i-plus"/></svg>Save current mix</button>
+    </div>
+    <p class="faint">Tip: on iPhone, switch off silent mode or the sound stays muted. The timer fades out over the last minute, then stops.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
